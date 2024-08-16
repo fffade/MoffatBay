@@ -2,13 +2,13 @@
 The Moffat Bay Lodge project for our Group #5 - CSD460 - Capstone in Software Development.
 
 # Moffat Bay Project
-Group Members:
-Alondra J.C.
-Omar J.
-Jeremiah K.
+Group 5 Members:
+- Alondra J.C.
+- Omar J.
+- Jeremiah K.
 
 Professor:
-Joseph I.
+- Joseph I.
 
 ## Project Overview
 
