@@ -15,24 +15,7 @@
 <body>
 
 	<!-- Included header  -->
-	<header>
-		<span class="header-logo">
-			<img src="./assets/icons8-island-100.png" alt="Moffat Bay Icon">
-			<span class="header-title">Moffat Bay Lodge</span>
-		</span>
-		
-		<nav class="header-navbar">
-			<a class="no-background" href="about.jsp">About</a>
-			
-			<a class="no-background" href="attractions.jsp">Attractions</a>
-			
-			<a class="no-background" href="reservation.jsp">Book</a>
-			
-			<a class="no-background" href="contact.jsp">Contact Us</a>
-			
-			<a href="login.jsp">Log In</a>
-		</nav>
-	</header>
+	<jsp:include page="header.jsp"/>
 	
 	<main class="landing">
 		

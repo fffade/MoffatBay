@@ -21,7 +21,7 @@ html, body
 	overflow: hidden;
 }
 
-body::before {
+body::before { /* Background image */
 	content: "";
 	position: absolute;
 	top: 0;
@@ -33,7 +33,7 @@ body::before {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	filter: grayscale(15%) blur(0.5px) brightness(80%) saturate(130%);
+	filter: grayscale(15%) blur(0.5px) brightness(75%) saturate(130%);
 }
 
 body
@@ -80,7 +80,7 @@ header
 {
 	max-width: 7rem;
 	text-wrap: wrap;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	font-family: Apple, sans-serif;
 	font-weight: 800;
 }
@@ -103,25 +103,33 @@ header nav *
 /* Main content */
 main
 {
-	width: 94%;
-	min-height: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 45%;
+	min-height: 50%; 
 	margin: 2rem auto;
-	background-color: #eee;
+	background-color: #efefef;
 	padding: 1rem;
+	text-align: center;
+}
+
+/* Smaller sized main, used for forms and such */
+.tight
+{
+	width: 35%;
+	min-height: unset;
+	height: min-content;
 }
 
 /* Unique landing content */
 .landing
 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	justify-content: space-evenly;
 	width: 40%;
 	min-height: 75%;
-	margin: 1rem 4%;
+	margin: 2rem 4%;
 	background-color: #A5EBFF;
-	text-align: center;
 }
 
 /* Unique floating message on landing page */
@@ -139,7 +147,7 @@ main
 }
 
 /* Standard link buttons */
-a
+a, .login-button
 {
 	border-radius: 30px;
 	color: #efefef;
@@ -154,11 +162,11 @@ a
 	background-color: #3730FD;
 	text-align: center;
 	text-decoration: none;
-	box-shadow: -2px -2px 4px 1px #d5d5d5;
+	box-shadow: -1px 2px 2px 1px #30303020, 1px 2px 2px 1px #30303020;
 	margin: 0.5rem auto;
 }
 
-a:hover
+a:hover, .login-button:hover
 {
 	cursor: pointer;
 	background-color: #3833D3;
@@ -186,6 +194,11 @@ a:hover
 	background-color: #296DEC;
 }
 
+.background-secondary:hover
+{
+	background-color: #195ddc;
+}
+
 .link
 {
 	text-decoration: underline;
@@ -205,11 +218,88 @@ div
 	text-align: center;
 }
 
+/* Forms */
+form
+{
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	text-align: left;
+	padding: 2rem;
+}
+
+form *
+{
+	width: 100%;
+}
+
+input:not([type="button"])
+{
+	background-color: #ddd;
+	font-size: 0.9rem;
+	font-family: Helvetica, sans-serif;
+}
+
+input, button
+{
+	margin-bottom: 1rem;
+	border: none;
+	min-height: 2rem;
+	padding: 5px;
+}
+
+.login-button /* Secondary login button with its own style */
+{
+	text-transform: unset;
+	font-size: 1.5rem;
+	box-shadow: unset;
+	padding: 0.25rem 0;
+}
+
 /* Standard text elements */
+h1, h2, h3 {
+	font-family: "Trebuchet MS", cursive, sans-serif;
+}
+
 h1
 {
-	font-family: "Trebuchet MS", cursive, sans-serif;
 	font-size: 1.8rem;
 	letter-spacing: 0.25px;
 	font-weight: 200;
 }
+
+h2
+{
+	font-size: 1.5rem;
+	letter-spacing: 0.25px;
+	font-weight: 200;
+}
+
+/* Informational pop up / caption message */
+.information
+{
+	font-size: 0.9rem;
+	text-align: center !important;
+	margin: 0.5rem auto;
+	font-weight: 0;
+}
+
+.small
+{
+	font-size: 0.85rem;
+	opacity: 0.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
