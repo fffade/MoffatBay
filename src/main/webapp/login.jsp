@@ -32,9 +32,10 @@
 		// Determine if this is a new session or if the user is already logged in
 		if(!session.isNew())
 		{
-			String email = (String)session.getAttribute("accountEmail");
+			Integer id = (Integer)session.getAttribute("id");
+			String email = (String)session.getAttribute("email");
 			
-			if(email != null)
+			if(id != null)
 			{
 				// Post success message
 				// Log Out button included
@@ -106,8 +107,15 @@
 				return;
 			}
 			
+			// Fetch the account email
+			rs = stmt.executeQuery("SELECT customerId FROM accounts WHERE email = \"" + email + "\"");
+			rs.next();
+			int id = rs.getInt("customerId");
+			rs.close();
+			
 			// Create a new session now by assigning the account email
-			session.setAttribute("accountEmail", email);
+			session.setAttribute("id", id);
+			session.setAttribute("email", email);
 			
 			// Refresh this page
 			response.sendRedirect("login.jsp");

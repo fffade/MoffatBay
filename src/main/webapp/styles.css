@@ -74,6 +74,7 @@ header
 	width: 64px;
 	height: 64px;
 	margin: auto 1rem;
+	box-shadow: unset;
 }
 
 .header-title
@@ -110,9 +111,10 @@ main
 	min-height: 50%; 
 	margin: 2rem auto;
 	background-color: #efefef;
-	padding: 1rem;
+	padding: 2rem;
 	text-align: center;
 }
+
 
 /* Smaller sized main, used for forms and such */
 .tight
@@ -145,6 +147,16 @@ main
 	text-wrap: wrap;
 	text-align: center;
 }
+
+/* Images */
+img
+{
+	width: 50%;
+	height: auto;
+	box-shadow: 0px 5px 3px 0px #00000020;
+	margin: 2rem auto;
+}
+
 
 /* Standard link buttons */
 a, .login-button
@@ -233,19 +245,24 @@ form *
 	width: 100%;
 }
 
-input:not([type="button"])
+input:not([type="button"]), select
 {
 	background-color: #ddd;
 	font-size: 0.9rem;
 	font-family: Helvetica, sans-serif;
 }
 
-input, button
+input, button, select
 {
 	margin-bottom: 1rem;
 	border: none;
 	min-height: 2rem;
 	padding: 5px;
+}
+
+button:disabled, button:hover:disabled
+{
+	background-color: #909090;
 }
 
 .login-button /* Secondary login button with its own style */
@@ -275,12 +292,22 @@ h2
 	font-weight: 200;
 }
 
+p
+{
+	font-size: 1rem;
+	font-weight: 200;
+	line-height: 1.5rem;
+	margin: 1rem auto;
+	text-align: left;
+	font-size: 0.95rem;
+}
+
 /* Informational pop up / caption message */
 .information
 {
 	font-size: 0.9rem;
 	text-align: center !important;
-	margin: 0.5rem auto;
+	margin: 1rem auto;
 	font-weight: 0;
 }
 
