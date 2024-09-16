@@ -9,7 +9,7 @@
 		
 		<a class="no-background" href="attractions.jsp">Attractions</a>
 		
-		<a class="no-background" href="reservation.jsp">Book</a>
+		<a class="no-background" href="reserve.jsp">Book</a>
 		
 		<a class="no-background" href="contact.jsp">Contact Us</a>
 		

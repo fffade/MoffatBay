@@ -42,7 +42,7 @@
 		<form method="POST" action="reserve.jsp">
 		
 			<label for="full-name">Full Name</label>
-			<input id="full-name" type="text" name="name" maxlength="255" required>
+			<input id="full-name" type="text" name="fullName" maxlength="255" required>
 			
 			<label for="room-size">Room</label>
 			<select id="room-size" name="roomSize">
@@ -99,6 +99,9 @@
 				const checkOutDate = new Date(checkOut.value);
 				
 				const diff = new Date(checkOutDate - checkInDate);
+				
+				// TODO: Ensure check in date is AFTER today's current date
+				// TODO: Ensure reservation length is CAPPED and not too long (e.g. 365 days)
 				
 				// Convert the difference in date to a number of nights
 				const nights = diff.valueOf() / (1000 * 60 * 60 * 24);
@@ -189,30 +192,10 @@
 			return;
 		}
 		
-		try
-		{
-			// No duplicates, send the user to the summary page
-			if(count <= 0)
-			{
-				// In order to transfer the reservation data, interpolate the reservation details into the GET URL
-				// i.e. request parameters
-				
-				//stmt.executeUpdate("INSERT INTO reservations (customerId, roomSize, guests, total, checkInDate, checkOutDate) VALUES (" + id + ", \"" + request.getParameter("roomSize") + "\", " + request.getParameter("guests") + ", " + request.getParameter("total") + ", \"" + inDate + "\", \"" + outDate + "\")");
-				
-				//out.println("Reservation placed");
-			}
-		}
-		catch (Exception e)
-		{
-			out.println("<p>Error inserting entry into the database.</p>");
-			out.println("<p>" + e + "</p>");
-		}
-		finally {
-			
-			stmt.close();
-			conn.close();
-		}
+		// Interpolate the reservation details into a GET URL and redirect the user to the confirmation page
+		String url = String.format("reserve_confirm.jsp?fullName=%1$s&roomSize=%2$s&guests=%3$d&checkInDate=%4$s&checkOutDate=%5$s&total=%6$.2f", request.getParameter("fullName"), request.getParameter("roomSize"), Integer.parseInt(request.getParameter("guests")), inDate, outDate, Float.parseFloat(request.getParameter("total")));
 		
+		response.sendRedirect(url);
 	}
 	%>
 	

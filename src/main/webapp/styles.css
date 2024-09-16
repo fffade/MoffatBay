@@ -273,6 +273,12 @@ button:disabled, button:hover:disabled
 	padding: 0.25rem 0;
 }
 
+label
+{
+	margin: 0.25rem auto;
+	line-height: 1rem;
+}
+
 /* Standard text elements */
 h1, h2, h3 {
 	font-family: "Trebuchet MS", cursive, sans-serif;
