@@ -90,6 +90,7 @@
 			
 			const minPrice = 115, maxPrice = 150;
 			const guestUpchargeThreshold = 2;
+			const maxNights = 365;
 			
 			// On every change of the form, compare the dates and update the estimate
 			const update = () =>
@@ -100,12 +101,12 @@
 				
 				const diff = new Date(checkOutDate - checkInDate);
 				
-				// TODO: Ensure check in date is AFTER today's current date
-				// TODO: Ensure reservation length is CAPPED and not too long (e.g. 365 days)
+				// Ensure check in date is AFTER today's current date
+				const today = Date.now();
 				
 				// Convert the difference in date to a number of nights
 				const nights = diff.valueOf() / (1000 * 60 * 60 * 24);
-				const isValidNights = nights && !Number.isNaN(nights) && nights > 0;
+				const isValidNights = nights && !Number.isNaN(nights) && nights > 0 && checkInDate.valueOf() > today.valueOf() && nights <= maxNights;
 				
 				// Update the display for the number of nights if available
 				nightsDisplay.innerText = isValidNights ? nights : "#";

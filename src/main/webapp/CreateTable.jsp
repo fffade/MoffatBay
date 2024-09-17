@@ -67,7 +67,7 @@
 	
 	try
 	{
-		stmt.executeUpdate("CREATE TABLE reservations (reservationId INT NOT NULL PRIMARY KEY AUTO_INCREMENT, customerId INTEGER NOT NULL, roomSize VARCHAR(3) NOT NULL, guests INTEGER NOT NULL, total REAL NOT NULL, checkInDate DATE NOT NULL, checkOutDate DATE NOT NULL, FOREIGN KEY (customerId) REFERENCES accounts(customerId))");
+		stmt.executeUpdate("CREATE TABLE reservations (reservationId INT NOT NULL PRIMARY KEY AUTO_INCREMENT, customerId INTEGER NOT NULL, fullName VARCHAR(255) NOT NULL, roomSize VARCHAR(3) NOT NULL, guests INTEGER NOT NULL, total REAL NOT NULL, checkInDate DATE NOT NULL, checkOutDate DATE NOT NULL, FOREIGN KEY (customerId) REFERENCES accounts(customerId))");
 		out.println("<b>Reservations<b> table successfully created.");
 		
 	}
