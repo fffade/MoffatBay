@@ -105,7 +105,7 @@
 			%><jsp:useBean id="newReservation" class="ReservationBean.ReservationBean"><jsp:setProperty name="newReservation" property="*"/></jsp:useBean><%
 			
 			// Insert record into database
-			stmt.executeUpdate("INSERT INTO reservations (customerId, fullName, roomSize, guests, checkInDate, checkOutDate, total) VALUES (" + newReservation.getCustomerId() + ", \"" + newReservation.getFullName() + "\", \"" + newReservation.getRoomSize() + "\", " + newReservation.getGuests() + ", \"" + newReservation.getCheckInDate() + "\", \"" + newReservation.getCheckOutDate() + "\", " + newReservation.getTotal() + ")");
+			stmt.executeUpdate("INSERT INTO reservations (customerId, roomSize, guests, checkInDate, checkOutDate, total) VALUES (" + newReservation.getCustomerId() + ", \"" + newReservation.getRoomSize() + "\", " + newReservation.getGuests() + ", \"" + newReservation.getCheckInDate() + "\", \"" + newReservation.getCheckOutDate() + "\", " + newReservation.getTotal() + ")");
 			
 			// Post success message
 			out.println("<span class='message'>Reservation successfully placed.<br><a class='link' href='reservation_lookup.jsp'>Look up your reservation</a></span>");

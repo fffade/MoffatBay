@@ -4,7 +4,7 @@
 	09/16/24
  -->
  <!--  Test application to ensure JDBC and database is functional -->
- <!--  Create the accounts and reservation tables, dropping them first if necessary -->
+ <!--  Insert trial information into accounts and reservation tables -->
 <%@page language="java" contentType="text/html"%>
 <%@page import="java.sql.*"%>
 <html>
