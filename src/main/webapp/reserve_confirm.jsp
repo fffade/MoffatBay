@@ -122,7 +122,7 @@
 		String outDate = newReservation.getCheckOutDate();
 		
 		// Retrieve duplicate reservations from the same customer using their id
-		ResultSet rs = stmt.executeQuery("SELECT COUNT(*) as recordCount FROM reservations WHERE customerId = " + id + " AND (\"" + inDate + "\" >= checkInDate AND checkOutDate >= \"" + inDate + "\") OR (\"" + inDate + "\" <= checkInDate AND \"" + outDate + "\" >= checkOutDate)");
+		ResultSet rs = stmt.executeQuery("SELECT COUNT(*) as recordCount FROM reservations WHERE customerId = " + id + " AND ((\"" + inDate + "\" >= checkInDate AND checkOutDate >= \"" + inDate + "\") OR (\"" + inDate + "\" <= checkInDate AND \"" + outDate + "\" >= checkOutDate))");
 		
 		// Fetch count
 		rs.next();

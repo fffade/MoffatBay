@@ -186,7 +186,7 @@
 		// Retrieve duplicate reservations from the same customer using their id
 		// By comparing dates that overlap
 		// Dates that overlap IS WHEN a check in date occurs during an existing reservation OR a check OUT date occurs during a new reservation
-		ResultSet rs = stmt.executeQuery("SELECT COUNT(*) as recordCount FROM reservations WHERE customerId = " + id + " AND (\"" + inDate + "\" >= checkInDate AND checkOutDate >= \"" + inDate + "\") OR (\"" + inDate + "\" <= checkInDate AND \"" + outDate + "\" >= checkOutDate)");
+		ResultSet rs = stmt.executeQuery("SELECT COUNT(*) AS recordCount FROM reservations WHERE customerId = " + id + " AND ((\"" + inDate + "\" >= checkInDate AND checkOutDate >= \"" + inDate + "\") OR (\"" + inDate + "\" <= checkInDate AND \"" + outDate + "\" >= checkOutDate))");
 		
 		// Fetch count
 		rs.next();
