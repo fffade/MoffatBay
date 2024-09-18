@@ -14,9 +14,8 @@
     <style>
         /* Set fixed dimensions for the image and use object-fit to maintain aspect ratio */
         #activityImage {
-            width: 500px; /* Adjust width as needed */
-            height: 250px; /* Adjust height as needed */
-            object-fit: contain; /* Change to 'contain' if you want to see the full image */
+            width: auto; /* Adjust width as needed */
+            height: 150px; /* Adjust height as needed */
         }
     </style>
     <script type="text/javascript">
