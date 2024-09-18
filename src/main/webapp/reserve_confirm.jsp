@@ -1,10 +1,3 @@
-<!-- 
-	Group 5
-	Reservation Summary
-	09/11/24
- -->
- <!-- Display a reservation confirmation to the logged in user -->
-
 <%@page language="java" contentType="text/html"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*" %>
@@ -67,6 +60,11 @@
 			
 			<button id="reserve" class="login-button" type="submit">RESERVE</button>
 		
+		</form>
+		
+		<!-- Cancel button to redirect back to reserve.jsp -->
+		<form method="GET" action="reserve.jsp">
+			<button class="link" type="submit">CANCEL</button>
 		</form>
 		
 	</main>
@@ -175,11 +173,11 @@
 		try
 		{
 			
-			// Insert record into database
-			stmt.executeUpdate("INSERT INTO reservations (customerId, roomSize, guests, checkInDate, checkOutDate, total) VALUES (" + newReservation.getCustomerId() + ", \"" + newReservation.getRoomSize() + "\", " + newReservation.getGuests() + ", \"" + newReservation.getCheckInDate() + "\", \"" + newReservation.getCheckOutDate() + "\", " + newReservation.getTotal() + ")");
+			// Insert record into database, including the fullName field
+			stmt.executeUpdate("INSERT INTO reservations (customerId, fullName, roomSize, guests, checkInDate, checkOutDate, total) VALUES (" + newReservation.getCustomerId() + ", \"" + newReservation.getFullName() + "\", \"" + newReservation.getRoomSize() + "\", " + newReservation.getGuests() + ", \"" + newReservation.getCheckInDate() + "\", \"" + newReservation.getCheckOutDate() + "\", " + newReservation.getTotal() + ")");
 			
 			// Post success message
-			out.println("<span class='message'>Reservation successfully placed.<br><a class='link' href='reservation_lookup.jsp'>Look up your reservation</a></span>");
+			out.println("<span class='message'>Reservation successfully placed.<br><a class='link' href='reserve_lookup.jsp'>Look up your reservation(s)</a></span>");
 		}
 		catch (SQLException e)
 		{

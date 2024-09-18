@@ -1,10 +1,3 @@
-<!-- 
-	Group 5
-	Populate Tables
-	09/16/24
- -->
- <!--  Test application to ensure JDBC and database is functional -->
- <!--  Insert trial information into accounts and reservation tables -->
 <%@page language="java" contentType="text/html"%>
 <%@page import="java.sql.*"%>
 <html>
@@ -68,34 +61,37 @@
 
         // Insert into Reservations table
         try {
-            String insertReservations = "INSERT INTO reservations (reservationId, customerId, roomSize, guests, total, checkInDate, checkOutDate) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String insertReservations = "INSERT INTO reservations (reservationId, customerId, fullName, roomSize, guests, total, checkInDate, checkOutDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             pstmtReservations = conn.prepareStatement(insertReservations);
 
             pstmtReservations.setInt(1, 1);
             pstmtReservations.setInt(2, 1);
-            pstmtReservations.setString(3, "KG");
-            pstmtReservations.setInt(4, 1);
-            pstmtReservations.setDouble(5, 115.0);
-            pstmtReservations.setDate(6, java.sql.Date.valueOf("2024-06-05"));
-            pstmtReservations.setDate(7, java.sql.Date.valueOf("2024-06-06"));
+            pstmtReservations.setString(3, "John Doe"); // Added fullName
+            pstmtReservations.setString(4, "KG");
+            pstmtReservations.setInt(5, 1);
+            pstmtReservations.setDouble(6, 115.0);
+            pstmtReservations.setDate(7, java.sql.Date.valueOf("2024-06-05"));
+            pstmtReservations.setDate(8, java.sql.Date.valueOf("2024-06-06"));
             pstmtReservations.executeUpdate();
 
             pstmtReservations.setInt(1, 2);
             pstmtReservations.setInt(2, 2);
-            pstmtReservations.setString(3, "2FB");
-            pstmtReservations.setInt(4, 3);
-            pstmtReservations.setDouble(5, 300.0);
-            pstmtReservations.setDate(6, java.sql.Date.valueOf("2024-07-15"));
-            pstmtReservations.setDate(7, java.sql.Date.valueOf("2024-07-17"));
+            pstmtReservations.setString(3, "Marcus Walker"); // Added fullName
+            pstmtReservations.setString(4, "2FB");
+            pstmtReservations.setInt(5, 3);
+            pstmtReservations.setDouble(6, 300.0);
+            pstmtReservations.setDate(7, java.sql.Date.valueOf("2024-07-15"));
+            pstmtReservations.setDate(8, java.sql.Date.valueOf("2024-07-17"));
             pstmtReservations.executeUpdate();
 
             pstmtReservations.setInt(1, 3);
             pstmtReservations.setInt(2, 3);
-            pstmtReservations.setString(3, "QU");
-            pstmtReservations.setInt(4, 2);
-            pstmtReservations.setDouble(5, 345.0);
-            pstmtReservations.setDate(6, java.sql.Date.valueOf("2024-08-21"));
-            pstmtReservations.setDate(7, java.sql.Date.valueOf("2024-08-24"));
+            pstmtReservations.setString(3, "Lucy Alexander"); // Added fullName
+            pstmtReservations.setString(4, "QU");
+            pstmtReservations.setInt(5, 2);
+            pstmtReservations.setDouble(6, 345.0);
+            pstmtReservations.setDate(7, java.sql.Date.valueOf("2024-08-21"));
+            pstmtReservations.setDate(8, java.sql.Date.valueOf("2024-08-24"));
             pstmtReservations.executeUpdate();
 
             out.println("<b>Reservations</b> table populated successfully.<br>");
