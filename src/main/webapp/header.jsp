@@ -13,6 +13,20 @@
 		
 		<a class="no-background" href="contact.jsp">Contact Us</a>
 		
-		<a href="login.jsp">Log In</a>
+		<%
+		// Check if user is logged in
+		Integer id = (Integer) session.getAttribute("id");
+		String fullName = (String) session.getAttribute("fullName"); // Assuming fullName is stored in session
+		
+		if (id != null && fullName != null) {
+		%>
+			<a href="login.jsp" class="link"><%= fullName %> is Logged In</a>
+		<%
+		} else {
+		%>
+			<a href="login.jsp">Log In</a>
+		<%
+		}
+		%>
 	</nav>
 </header>

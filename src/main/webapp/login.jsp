@@ -108,14 +108,16 @@
 			}
 			
 			// Fetch the account email
-			rs = stmt.executeQuery("SELECT customerId FROM accounts WHERE email = \"" + email + "\"");
+			rs = stmt.executeQuery("SELECT customerId, CONCAT(firstName, ' ', lastName) AS fullName FROM accounts WHERE email = \"" + email + "\"");
 			rs.next();
 			int id = rs.getInt("customerId");
+			String fullName = rs.getString("fullName");
 			rs.close();
 			
 			// Create a new session now by assigning the account email
 			session.setAttribute("id", id);
 			session.setAttribute("email", email);
+			session.setAttribute("fullName", fullName);
 			
 			// Refresh this page
 			response.sendRedirect("login.jsp");

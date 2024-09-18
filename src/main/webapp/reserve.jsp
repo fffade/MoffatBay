@@ -76,6 +76,14 @@
 		
 		</form>
 		
+		<!-- Button to look up existing reservations -->
+		<div class="lookup-section">
+			<h3>Already have a reservation?</h3>
+			<form method="get" action="reserve_lookup.jsp">
+				<button type="submit" class="link">Look Up Existing Reservations</button>
+			</form>
+		</div>
+		
 		<!--  Update the dates, the # of nights, and the total estimate in real time -->
 		<script type="text/javascript" defer>
 			
