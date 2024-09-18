@@ -70,6 +70,12 @@
 			
 			<span class="information small">
 				Room recommendations
+				<ul>
+					<li>1 guest: King or Queen</li>
+					<li>2 guests: King, Double Full Beds, or Double Queen Beds</li>
+					<li>3 guests: Double Full Beds or Queen Beds</li>
+					<li>4-5 guests: Double Queen Beds</li>
+				</ul>
 			</span>
 			
 			<button id="continue" class="login-button" type="submit">Continue</button>
@@ -79,9 +85,7 @@
 		<!-- Button to look up existing reservations -->
 		<div class="lookup-section">
 			<h3>Already have a reservation?</h3>
-			<form method="get" action="reserve_lookup.jsp">
-				<button type="submit" class="link">Look Up Existing Reservations</button>
-			</form>
+			<a class="link" href="reserve_lookup.jsp">Look Up Existing Reservations</a>
 		</div>
 		
 		<!--  Update the dates, the # of nights, and the total estimate in real time -->
