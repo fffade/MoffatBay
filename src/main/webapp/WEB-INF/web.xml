@@ -11,10 +11,10 @@
   </welcome-file-list>
   <context-param>
   	<param-name>dbUser</param-name>
-  	<param-value>group5</param-value>
+  	<param-value>root</param-value>
   </context-param>
   <context-param>
   	<param-name>dbPass</param-name>
-  	<param-value>group5pass</param-value>
+  	<param-value>Lo21!#21</param-value>
   </context-param>
 </web-app>

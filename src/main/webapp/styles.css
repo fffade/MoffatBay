@@ -311,6 +311,18 @@ p
 	font-size: 0.95rem;
 }
 
+ul
+{
+	margin: 0.5rem auto;
+	padding: 0.5rem;
+	text-align: left;
+}
+
+li
+{
+	font-size: 0.8rem;
+}
+
 /* Informational pop up / caption message */
 .information
 {

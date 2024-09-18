@@ -1,6 +1,6 @@
 <!-- 
     Group 5
-    Attractions Page
+    Contact Page
     09/16/24
 -->
 <!-- This page provides information for users to contact Moffat Bay Lodge -->
@@ -37,9 +37,9 @@
         <p>
             &emsp;You can reach us via email or phone:
             <br><br>
-            <strong>Email:</strong>   info@moffatbaylodge.com
+            <strong>Email:</strong>&ensp;info@moffatbaylodge.com
             <br>
-            <strong>Phone:</strong> +1 (555) 867-5309
+            <strong>Phone:</strong>&ensp;+1 (555) 867-5309
         </p>
 
         <p>
