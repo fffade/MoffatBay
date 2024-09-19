@@ -107,7 +107,7 @@ main
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 45%;
+	width: 55%;
 	min-height: 50%; 
 	margin: 2rem auto;
 	background-color: #efefef;
@@ -281,6 +281,32 @@ label
 	line-height: 1rem;
 	text-align: left;
 }
+
+/* Tables */
+table
+{
+	margin: 1rem auto;
+	border: 2px solid black;
+	padding: 0.5rem;
+	border-collapse: collapse;
+}
+
+tr
+{
+	border-bottom: 1px solid black;
+	border-radius: 0;
+}
+
+th
+{
+	padding: 0.5rem;
+}
+
+td
+{
+	padding: 1rem 0.5rem;
+}
+
 
 /* Standard text elements */
 h1, h2, h3 {
