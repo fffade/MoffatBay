@@ -21,7 +21,7 @@
     	}
     
         /* Set fixed dimensions for the image and use object-fit to maintain aspect ratio */
-        img {
+        .imageContainer img {
        		display: block;
             width: auto; /* Adjust width as needed */
             height: 150px; /* Adjust height as needed */
@@ -32,12 +32,12 @@
             margin: auto;
         }
         
-        img.activityHide {
+        .imageContainer img.activityHide {
         	opacity: 0%;
         	transition: opacity 0.5s 0.05s;
         }
         
-        img.activityShow {
+        .imageContainer img.activityShow {
         	opacity: 100%;
         	transition: opacity 0.5s 0s;
         }
