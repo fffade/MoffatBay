@@ -99,6 +99,9 @@
 			if(conn != null) conn.close();
 		}
 		%>
+		
+		<a class="link" href="reserve.jsp">Book another stay with us!</a>
+		
 	</main>
 	
 </body>
