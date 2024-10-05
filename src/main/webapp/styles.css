@@ -113,6 +113,7 @@ main
 	background-color: #efefef;
 	padding: 2rem;
 	text-align: center;
+	overflow-x: scroll;
 }
 
 
@@ -375,21 +376,49 @@ li
 }
 
 /* Respond to smaller screen sizes */
-@media screen and (max-width: 1100px)
+@media screen and (min-width: 1000px) and (max-width: 1300px)
 {
 	header nav
 	{
 		width: 75%;
 	}
 	
+	main
+	{
+		width: 70%;
+	}
+	
 	.tight
 	{
-		width: 50%;
+		width: 55%;
 	}
 	
 	*
 	{
-		font-size: 16px;
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 999px)
+{
+	header nav
+	{
+		width: 80%;
+	}
+	
+	main
+	{
+		width: 90%;
+	}
+	
+	.tight
+	{
+		width: 80%;
+	}
+	
+	*
+	{
+		font-size: 13px;
 	}
 }
 
