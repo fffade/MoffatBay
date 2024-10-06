@@ -14,20 +14,20 @@
 	src: url(./assets/accidental_presidency.ttf);
 }
 
-html, body
-{
-	width: 100%;
-	height: 100vh;
-	overflow-x: hidden;
+html, body {
+    width: 100%;
+    height: 100vh;
+    min-width: 860px; /* Adjust this to control when the scroll kicks in */
+    overflow-x: auto; /* Allow horizontal scrolling at the page level */
 }
 
 body::before { /* Background image */
 	content: "";
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	z-index: -1;
 	background-image: url(./assets/island.jpg);
 	background-size: cover;
@@ -61,6 +61,7 @@ header
 	margin: 1rem auto;
 	padding: 0.25rem;
 	justify-content: space-between;
+	position: relative;
 }
 
 .header-logo
@@ -113,7 +114,6 @@ main
 	background-color: #efefef;
 	padding: 2rem;
 	text-align: center;
-	overflow-x: scroll;
 }
 
 
@@ -140,13 +140,14 @@ main
 {
 	position: absolute;
 	bottom: 16%;
-	right: 12%;
+	right: 3%;
 	font-family: Apple, serif;
 	font-size: 1.5rem;
 	color: #fff;
 	max-width: 16%;
 	text-wrap: wrap;
 	text-align: center;
+	font-size: 36px;
 }
 
 /* Images */
