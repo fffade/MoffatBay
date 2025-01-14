@@ -3,7 +3,6 @@ The Moffat Bay Lodge project for our Group #5 - CSD460 - Capstone in Software De
 
 # Moffat Bay Project
 Group 5 Members:
-- Alondra J.C.
 - Omar J.
 - Jeremiah K.
 
